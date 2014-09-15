@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 
 # bring software up to date
 RUN apt-get update
@@ -28,7 +28,6 @@ ADD boostrap.py /boostrap.py
 RUN python boostrap.py
 
 
-# RUN sentry --config=/sentry.conf.py createsuperuser
 RUN sentry repair --owner=admin
 
 EXPOSE 9000
