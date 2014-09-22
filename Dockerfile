@@ -32,6 +32,6 @@ RUN sentry repair --owner=ozan
 
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/local/bin/sentry"]
+# ENTRYPOINT ["/usr/local/bin/sentry"]
 
-CMD ["start"]
+# CMD ["start"]
