@@ -2,20 +2,21 @@ import os.path
 import os
 
 
-SECRET_KEY = 'foobar'
+SECRET_KEY = '*a&r#ql7pii7awl*xre(&j1@q-z4j2)@l)o5hu7=^emno!hx1%'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db.sqlite3',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
-SENTRY_KEY = os.environ.get('SENTRY_KEY', 'foo')
+SENTRY_KEY = os.environ.get(
+    'SENTRY_KEY', '80)30e+no5ulv9*bv8jnkrz90nf2qjfg*u3rypw@n8^_9tpvu#')
 
 
 # Set this to false to require authentication

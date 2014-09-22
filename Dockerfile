@@ -28,7 +28,7 @@ ADD boostrap.py /boostrap.py
 RUN python boostrap.py
 
 
-RUN sentry repair --owner=admin
+RUN sentry repair --owner=ozan
 
 EXPOSE 9000
 
