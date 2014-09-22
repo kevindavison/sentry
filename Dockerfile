@@ -30,7 +30,7 @@ RUN python boostrap.py
 
 RUN sentry repair --owner=ozan
 
-EXPOSE 9000
+EXPOSE 3000
 
 # ENTRYPOINT ["/usr/local/bin/sentry"]
 

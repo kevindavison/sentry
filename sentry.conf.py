@@ -30,7 +30,7 @@ SERVER_EMAIL = os.environ.get('SENTRY_EMAIL_FROM', 'root@localhost')
 SENTRY_URL_PREFIX = os.environ.get('SENTRY_URL_PREFIX', '')
 
 SENTRY_WEB_HOST = '0.0.0.0'
-SENTRY_WEB_PORT = 9000
+SENTRY_WEB_PORT = 3000
 SENTRY_WEB_OPTIONS = {
     'workers': 3,  # the number of gunicorn workers
     'secure_scheme_headers': {'X-FORWARDED-PROTO': 'https'},  # detect HTTPS mode from X-Forwarded-Proto header
