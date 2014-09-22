@@ -4,24 +4,28 @@ configure()
 
 from sentry.models import Team, Project, ProjectKey, User
 
-user = User()
-user.username = 'ozan'
-user.email = 'oz@vida.com'
-user.is_superuser = True
-user.set_password('ozan')
-user.save()
+user, created = User.objects.get_or_create(username='ozan', defaults={
+    'email': 'oz@vida.com',
+    'is_superuser': True
+})
 
-team = Team()
-team.name = 'Vida'
-team.owner = user
-team.save()
+if created:
+    user.set_password('ozan')
+    user.save()
+
+
+team, created = Team.objects.get_or_create(name='Vida')
+if created:
+    team.owner = user
+    team.save()
+
 
 for project_name in ('webserver', 'webclient', 'socketserver', 'ios'):
-    project = Project()
-    project.team = team
-    project.owner = user
-    project.name = project_name
-    project.save()
+    project, created = Project.objects.get_or_create(name=project_name)
+    if created:
+        project.team = team
+        project.owner = user
+        project.save()
 
     key = ProjectKey.objects.filter(project=project)[0]
     print project_name, 'SENTRY_DSN = {}'.format(key.get_dsn())
