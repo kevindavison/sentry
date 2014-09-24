@@ -14,10 +14,9 @@ if created:
     user.save()
 
 
-team, created = Team.objects.get_or_create(name='Vida')
-if created:
-    team.owner = user
-    team.save()
+team, created = Team.objects.get_or_create(name='Vida', defaults={
+    'owner': user
+})
 
 
 for project_name in ('webserver', 'webclient', 'socketserver', 'ios'):
