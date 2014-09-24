@@ -20,11 +20,11 @@ team, created = Team.objects.get_or_create(name='Vida', defaults={
 
 
 for project_name in ('webserver', 'webclient', 'socketserver', 'ios'):
-    project, created = Project.objects.get_or_create(name=project_name)
-    if created:
-        project.team = team
-        project.owner = user
-        project.save()
+    project, created = Project.objects.get_or_create(
+        name=project_name, defaults={
+            'team': team,
+            'owner': user,
+        })
 
     key = ProjectKey.objects.filter(project=project)[0]
     print project_name, 'SENTRY_DSN = {}'.format(key.get_dsn())
