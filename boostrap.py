@@ -10,7 +10,7 @@ user, created = User.objects.get_or_create(username='ozan', defaults={
 })
 
 if created:
-    user.set_password('ozan')
+    user.set_password('YL*Jg%*AeL^fCY3%xjhr2ZaYw')
     user.save()
 
 
