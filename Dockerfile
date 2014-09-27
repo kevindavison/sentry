@@ -18,7 +18,8 @@ RUN apt-get install -y build-essential python-dev python-pip
 RUN apt-get install -y postgresql postgresql-contrib libpq-dev
 
 # install sentry and postgres binding
-RUN pip install psycopg2 sentry
+ADD requirements.txt /
+RUN pip install -r /requirements.txt
 
 # move sentry config to default location
 ADD sentry.conf.py /.sentry/sentry.conf.py
