@@ -38,38 +38,11 @@ SENTRY_WEB_OPTIONS = {
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# Mail server configuration
-
-# For more information check Django's documentation:
-#  https://docs.djangoproject.com/en/1.3/topics/email/?from=olddocs#e-mail-backends
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' if os.environ.get('SENTRY_EMAIL_ENABLED') else 'django.core.mail.backends.console.EmailBackend'
-
-EMAIL_HOST = os.environ.get('SENTRY_EMAIL_HOST', 'localhost')
-EMAIL_HOST_PASSWORD = os.environ.get('SENTRY_EMAIL_PASSWORD', '')
-EMAIL_HOST_USER = os.environ.get('SENTRY_EMAIL_USER','')
-EMAIL_PORT = os.environ.get('SENTRY_EMAIL_PORT', 25)
-EMAIL_USE_TLS = os.environ.get('SENTRY_EMAIL_USE_TLS', False)
-
-# http://twitter.com/apps/new
-# It's important that input a callback URL, even if its useless. We have no idea why, consult Twitter.
-TWITTER_CONSUMER_KEY = os.environ.get('TWITTER_CONSUMER_KEY')
-TWITTER_CONSUMER_SECRET = os.environ.get('TWITTER_CONSUMER_SECRET')
-
-# http://developers.facebook.com/setup/
-FACEBOOK_APP_ID = os.environ.get('FACEBOOK_APP_ID')
-FACEBOOK_API_SECRET = os.environ.get('FACEBOOK_APP_SECRET')
-
-# http://code.google.com/apis/accounts/docs/OAuth2.html#Registering
-GOOGLE_OAUTH2_CLIENT_ID = os.environ.get('GOOGLE_OAUTH2_CLIENT_ID')
-GOOGLE_OAUTH2_CLIENT_SECRET = os.environ.get('GOOGLE_OAUTH2_CLIENT_SECRET')
-
-# https://github.com/settings/applications/new
-GITHUB_APP_ID = os.environ.get('GITHUB_APP_ID')
-GITHUB_API_SECRET = os.environ.get('GITHUB_APP_SECRET')
-
-# https://trello.com/1/appKey/generate
-TRELLO_API_KEY = os.environ.get('TRELLO_API_KEY')
-TRELLO_API_SECRET = os.environ.get('TRELLO_API_SECRET')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ['SENDGRID_USERNAME']
+EMAIL_HOST_PASSWORD = os.environ['SENDGRID_PASSWORD']
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 ALLOWED_HOSTS=['*']
