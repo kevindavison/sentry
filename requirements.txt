@@ -32,6 +32,7 @@ pytz==2014.7
 raven==5.0.0
 redis==2.8.0
 sentry==6.4.4
+sentry-github==0.1.2
 sentry-slack==0.1.0
 setproctitle==1.1.8
 simplejson==3.3.3
