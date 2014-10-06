@@ -26,7 +26,7 @@ ADD sentry.conf.py /.sentry/sentry.conf.py
 RUN sentry upgrade
 
 ADD boostrap.py /boostrap.py
-RUN python boostrap.py
+# RUN python boostrap.py
 
 
 RUN sentry repair --owner=ozan
