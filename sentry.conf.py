@@ -5,8 +5,15 @@ import dj_database_url
 
 SECRET_KEY = '*a&r#ql7pii7awl*xre(&j1@q-z4j2)@l)o5hu7=^emno!hx1%'
 
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
+
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+    }
 }
 
 SENTRY_KEY = os.environ.get(
