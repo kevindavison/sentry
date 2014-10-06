@@ -17,6 +17,9 @@ RUN apt-get install -y build-essential python-dev python-pip
 # we want postgres
 RUN apt-get install -y postgresql postgresql-contrib libpq-dev
 
+
+RUN echo $ENVIRONMENT
+
 # install sentry and postgres binding
 ADD requirements.txt /
 RUN pip install -r /requirements.txt
