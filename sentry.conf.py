@@ -12,10 +12,6 @@ DATABASES = {
 SENTRY_KEY = os.environ.get(
     'SENTRY_KEY', '80)30e+no5ulv9*bv8jnkrz90nf2qjfg*u3rypw@n8^_9tpvu#')
 
-print os.environ
-
-print os.environ['ENVIRONMENT']
-
 # Set this to false to require authentication
 SENTRY_PUBLIC = False
 SENTRY_ALLOW_REGISTRATION = False
