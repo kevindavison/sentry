@@ -34,8 +34,8 @@ SENTRY_WEB_OPTIONS = {
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# MIDDLEWARE_CLASSES = \
-#     ('middleware.ForceSSLMiddleware',) + MIDDLEWARE_CLASSES
+MIDDLEWARE_CLASSES = \
+    ('middleware.ForceSSLMiddleware',) + MIDDLEWARE_CLASSES
 
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = os.environ['MAILGUN_ACCESS_KEY']
