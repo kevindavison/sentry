@@ -5,6 +5,8 @@ import os
 import dj_database_url
 
 
+DEBUG = True
+
 SECRET_KEY = '*a&r#ql7pii7awl*xre(&j1@q-z4j2)@l)o5hu7=^emno!hx1%'
 
 DATABASES = {
