@@ -30,3 +30,6 @@ RUN pip install -r /app/requirements.txt
 
 
 EXPOSE 3000
+
+
+FROMCACHE vida-sentry
