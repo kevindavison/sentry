@@ -1,15 +1,15 @@
 FROM ubuntu:14.04
 
 # update packages
-RUN apt-get update
+RUN apt-get update  # cachebust
 RUN apt-get upgrade -y
 
-# # set locales (for postgres)
-# RUN apt-get install -y language-pack-en
-# ENV LANGUAGE en_US.UTF-8
-# ENV LANG en_US.UTF-8
-# ENV LC_ALL en_US.UTF-8
-# RUN locale-gen en_US.UTF-8
+# set locales (for postgres)
+RUN apt-get install -y language-pack-en
+ENV LANGUAGE en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+RUN locale-gen en_US.UTF-8
 
 # we want python (and pip)
 RUN apt-get install -y build-essential python-dev python-pip
