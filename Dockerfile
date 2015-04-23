@@ -23,7 +23,7 @@ WORKDIR /app
 ADD . /app/
 
 # move sentry config to default location
-ADD sentry.conf.py /.sentry/sentry.conf.py
+ADD sentry.conf.py /root/.sentry/sentry.conf.py
 
 # install sentry and postgres binding
 RUN pip install -r /app/requirements.txt
