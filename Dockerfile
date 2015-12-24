@@ -1,4 +1,9 @@
-FROM ubuntu:14.04
+FROM ubuntu
+
+ENV DB_HOST localhost
+ENV MAILGUN_ACCESS_KEY 12345
+ENV MAILGUN_SERVER_NAME localhost
+ENV SENTRY_URL_PREFIX http://sentry.local.com
 
 # update packages
 RUN apt-get update  # cachebust
@@ -12,10 +17,13 @@ ENV LC_ALL en_US.UTF-8
 RUN locale-gen en_US.UTF-8
 
 # we want python (and pip)
-RUN apt-get install -y build-essential python-dev python-pip
-
-# we want postgres
-RUN apt-get install -y postgresql postgresql-contrib libpq-dev
+RUN apt-get install -y \
+	build-essential \
+	python-dev \
+	python-pip \
+	postgresql \
+	postgresql-contrib \
+	libpq-dev
 
 # add the source code
 RUN mkdir -p /app
@@ -29,7 +37,7 @@ ADD sentry.conf.py /root/.sentry/sentry.conf.py
 RUN pip install -r /app/requirements.txt
 
 
-EXPOSE 3000
+EXPOSE 9000
 
 
-FROMCACHE vida-sentry
+#FROMCACHE vida-sentry
