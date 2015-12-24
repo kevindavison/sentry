@@ -33,7 +33,7 @@ ADD . /app/
 RUN pip install -r requirements.txt
 
 # move sentry config to default location
-ADD sentry.conf.py ~/.sentry/sentry.conf.py
+ADD sentry.conf.py /root/.sentry/sentry.conf.py
 
 EXPOSE 9000
 
