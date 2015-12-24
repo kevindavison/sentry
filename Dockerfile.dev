@@ -13,13 +13,13 @@ RUN apt-get update && apt-get upgrade -y
 
 # we want python (and pip)
 RUN apt-get install -y \
-	build-essential \
-	language-pack-en \
-	python-dev \
-	python-pip \
-	postgresql \
-	postgresql-contrib \
-	libpq-dev
+    build-essential \
+    language-pack-en \
+    python-dev \
+    python-pip \
+    postgresql \
+    postgresql-contrib \
+    libpq-dev
 
 # set locales (for postgres)
 RUN locale-gen en_US.UTF-8
