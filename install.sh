@@ -9,4 +9,4 @@ python boostrap.py
 
 # as the default superuser was not created on the first `upgrade` run,
 # sentry requires us to
-sentry repair --owner=ozan
+sentry repair 

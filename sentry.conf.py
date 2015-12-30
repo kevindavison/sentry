@@ -1,3 +1,4 @@
+
 from sentry.conf.server import *  # NOQA
 
 import os
@@ -23,7 +24,7 @@ DATABASES = {
          }
     }
 }
-
+SENTRY_ADMIN_EMAIL = 'superuser@email.com'
 SENTRY_KEY = os.environ.get(
     'SENTRY_KEY', '80)30e+no5ulv9*bv8jnkrz90nf2qjfg*u3rypw@n8^_9tpvu#')
 
@@ -32,6 +33,7 @@ SENTRY_PUBLIC = False
 SENTRY_ALLOW_REGISTRATION = False
 
 SERVER_EMAIL = os.environ.get('SENTRY_EMAIL_FROM', 'root@localhost')
+SENTRY_CACHE = 'sentry.cache.redis.RedisCache'
 
 # The absolute URI to Sentry
 SENTRY_URL_PREFIX = os.environ.get('SENTRY_URL_PREFIX')

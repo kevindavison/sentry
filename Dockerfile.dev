@@ -16,10 +16,14 @@ RUN apt-get install -y \
     build-essential \
     language-pack-en \
     python-dev \
+    gcc \
     python-pip \
     postgresql \
     postgresql-contrib \
-    libpq-dev
+    libpq-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    libffi-dev
 
 # set locales (for postgres)
 RUN locale-gen en_US.UTF-8
